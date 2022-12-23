@@ -8,9 +8,8 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production'
-    ? '/vue3-admin/' // prod
-    : '/', // dev
+  // base: process.env.NODE_ENV === 'production'
+  //   ? '/admin-static/' : '/',
   plugins: [
     vue({
       template: { transformAssetUrls }
