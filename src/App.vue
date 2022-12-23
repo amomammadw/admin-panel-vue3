@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-navigation-drawer v-model="drawer">
-      <v-list>
+      <v-list color="primary">
         <v-list-item v-for="linkItem, linkIndex in navLinks" :key="linkIndex" :to="linkItem.link">
           <template #prepend>
             <v-icon>{{ linkItem.icon }}</v-icon>
@@ -41,6 +41,11 @@ let themeStatus = ref()
 const navLinks: ISideNavLinks[] = [
   { text: 'Home', link: '/', icon: 'mdi-home' },
   { text: 'Charts', link: '/charts', icon: 'mdi-chart-bar' },
+  { text: 'Posts', link: '/posts', icon: 'mdi-post' },
+  { text: 'Pages', link: '/pages', icon: 'mdi-page-layout-body' },
+  { text: 'Users', link: '/users', icon: 'mdi-account-multiple' },
+  { text: 'Settings', link: '/settings', icon: 'mdi-cog' },
+  { text: 'Orders', link: '/orders', icon: 'mdi-store' },
 ]
 const theme = useTheme()
 
