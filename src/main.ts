@@ -13,6 +13,8 @@ import { createApp } from 'vue'
 // Plugins
 import { registerPlugins } from '@/plugins'
 
+import '@/assets/styles/index.scss'
+
 const app = createApp(App)
 
 registerPlugins(app)

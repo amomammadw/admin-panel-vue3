@@ -15,8 +15,7 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Hamchat Admin Panel</v-toolbar-title>
 
-      <v-switch class="d-flex justify-end mr-3" inset prepend-icon="mdi-theme-light-dark" true-value="dark"
-        false-value="light" v-model="themeStatus" hide-details @change="toggletheme"></v-switch>
+      <UserMenu class="d-flex justify-end mr-3" />
     </v-app-bar>
 
     <v-main>
@@ -30,12 +29,11 @@
 <script lang="ts" setup>
 // Imports
 import { ref } from 'vue'
+import UserMenu from './components/Layout/UserMenu.vue';
 import { ISideNavLinks } from './interface/IGlobal'
-import { useTheme } from 'vuetify';
 
 // Variables
 let drawer = ref()
-let themeStatus = ref()
 
 // Static Data
 const navLinks: ISideNavLinks[] = [
@@ -46,10 +44,7 @@ const navLinks: ISideNavLinks[] = [
   { text: 'Users', link: '/users', icon: 'mdi-account-multiple' },
   { text: 'Settings', link: '/settings', icon: 'mdi-cog' },
   { text: 'Orders', link: '/orders', icon: 'mdi-store' },
+  { text: 'Tickets', link: '/tickets', icon: 'mdi-face-agent' },
 ]
-const theme = useTheme()
 
-const toggletheme = () => {
-  theme.global.name.value = themeStatus.value
-}
 </script>
