@@ -10,37 +10,37 @@ const routes = [
   {
     path: '/charts',
     name: 'Charts',
-    component: () => import('@/views/Charts.vue'),
+    component: () => import('@/views/charts/index.vue'),
   },
   {
     path: '/posts',
     name: 'Posts',
-    component: () => import('@/views/Posts.vue'),
+    component: () => import('@/views/posts/index.vue'),
   },
   {
     path: '/pages',
     name: 'Pages',
-    component: () => import('@/views/Pages.vue'),
+    component: () => import('@/views/pages/index.vue'),
   },
   {
     path: '/users',
     name: 'Users',
-    component: () => import('@/views/Users.vue'),
+    component: () => import('@/views/users/index.vue'),
   },
   {
     path: '/settings',
     name: 'Settings',
-    component: () => import('@/views/Settings.vue'),
+    component: () => import('@/views/settings/index.vue'),
   },
   {
     path: '/orders',
     name: 'Orders',
-    component: () => import('@/views/Orders.vue'),
+    component: () => import('@/views/orders/index.vue'),
   },
   {
     path: '/tickets',
     name: 'Tickets',
-    component: () => import('@/views/Tickets.vue'),
+    component: () => import('@/views/tickets/index.vue'),
   }
 ]
 

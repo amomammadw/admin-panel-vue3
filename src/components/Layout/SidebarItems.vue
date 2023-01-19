@@ -7,16 +7,6 @@
                 </template>
                 <v-list-item-title>{{ linkItem.text }}</v-list-item-title>
             </v-list-item>
-
-            <v-list-group v-else value="MMd">
-                <template v-slot:activator="{ props }">
-                    <v-list-item v-bind="props" title="MMD"></v-list-item>
-                </template>
-
-                <v-list-item v-for="(subItem, i) in linkItem.subMenu" :key="i" :value="subItem.text"
-                    :title="subItem.text" :prepend-icon="subItem.icon">
-                </v-list-item>
-            </v-list-group>
         </template>
 
 
@@ -37,13 +27,5 @@ const navLinks: ISideNavLinks[] = [
     { text: 'Settings', link: '/settings', icon: 'mdi-cog' },
     { text: 'Orders', link: '/orders', icon: 'mdi-store' },
     { text: 'Tickets', link: '/tickets', icon: 'mdi-face-agent', },
-    {
-        text: 'Tickets', link: '/tickets', icon: 'mdi-face-agent',
-        subMenu: [{ text: 'mmd', icon: 'mdi-google', link: '/' }]
-    },
 ]
 </script>
-
-<style scoped>
-
-</style>

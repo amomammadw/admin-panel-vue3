@@ -6,7 +6,7 @@
 
     <v-app-bar>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Hamchat Admin Panel</v-toolbar-title>
+      <v-toolbar-title>Admin Panel</v-toolbar-title>
 
       <UserMenu class="d-flex justify-end mr-3" />
     </v-app-bar>
