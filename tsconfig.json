@@ -12,13 +12,19 @@
     "sourceMap": false,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
+    "isolatedModules": false,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "types": [
       "node",
       "vuetify"
     ],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
   },
   "include": [

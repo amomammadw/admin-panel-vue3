@@ -22,9 +22,6 @@ import { computed } from 'vue';
 
 const props = defineProps(['items'])
 
-
-console.log(props.items);
-
 const tableHeaders = computed(() => {
     const singleRow = props.items[0]
     return Object.keys(singleRow)
