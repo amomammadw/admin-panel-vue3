@@ -9,10 +9,11 @@
         <v-dialog v-model="addPostModal" width="700">
             <v-card>
                 <v-card-text>
+                    <VAlert color="success" closable variant="tonal" class="mb-5">error</VAlert>
                     <VTextField v-model="postData.title" label="Title"></VTextField>
                     <VTextField v-model="postData.subtitle" label="Subtitle"></VTextField>
                     <VTextarea v-model="postData.content" label="Content"></VTextarea>
-                    <VBtn color="primary">Publish Post</VBtn>
+                    <VBtn color="primary" @click="addPost">Publish Post</VBtn>
                 </v-card-text>
             </v-card>
         </v-dialog>
@@ -21,13 +22,13 @@
 
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue';
-import { useFetch } from '@vueuse/core';
 import { IPostData } from '@/interface/IContent';
-
+import { useApi } from '@/composables/useApi'
 let postData = reactive<IPostData>({ content: '', title: '', subtitle: '' })
 let addPostModal = ref(false)
 
-const { data, error, isFetching } = useFetch(`${import.meta.env.VITE_BASE_URL}posts`)
-
+const addPost = async () => {
+    const { data, error, isFetching } = await useApi({ endpoint: 'posts', method: 'post', body: { mmd: 'asdasd' } })
+}
 
 </script>
