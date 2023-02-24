@@ -1,6 +1,6 @@
 import { createFetch } from '@vueuse/core';
 
-const useMyFetch = createFetch({
+const useApi = createFetch({
 
     baseUrl: 'http://127.0.0.1:8000/api/',
     options: {
@@ -18,4 +18,4 @@ const useMyFetch = createFetch({
     },
 })
 
-export default useMyFetch
+export default useApi
