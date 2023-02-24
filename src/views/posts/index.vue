@@ -23,12 +23,13 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue';
 import { IPostData } from '@/interface/IContent';
-import { useApi } from '@/composables/useApi'
+import useMyFetch from '@/composables/useApi';
 let postData = reactive<IPostData>({ content: '', title: '', subtitle: '' })
 let addPostModal = ref(false)
 
 const addPost = async () => {
-    const { data, error, isFetching } = await useApi({ endpoint: 'posts', method: 'post', body: { mmd: 'asdasd' } })
+    const { data, error, isFetching } = await useMyFetch('posts')
+    console.log(error.value);
 }
 
 </script>

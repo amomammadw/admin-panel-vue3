@@ -1,13 +1,21 @@
-import { useFetch } from '@vueuse/core';
-import { type IApiRequest } from '@/interface/IGlobal'
+import { createFetch } from '@vueuse/core';
 
-export const useApi = async (apiOptions: IApiRequest) => {
-    const { data, error, isFetching } = await useFetch(`${import.meta.env.VITE_BASE_URL}${apiOptions.endpoint}`, {
-        beforeFetch({ options }) {
+const useMyFetch = createFetch({
+
+    baseUrl: 'http://127.0.0.1:8000/api/',
+    options: {
+        async beforeFetch({ options }) {
+            options.method = 'post'
             options.headers = {
+                'Authorization': 'token',
                 'accept': 'application/json'
             }
-        }
-    })[apiOptions.method](apiOptions.body)
-    return { data, error, isFetching }
-}
+            return { options }
+        },
+    },
+    fetchOptions: {
+        mode: 'cors',
+    },
+})
+
+export default useMyFetch
