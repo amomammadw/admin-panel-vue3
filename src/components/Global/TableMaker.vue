@@ -2,28 +2,21 @@
     <v-table>
         <thead>
             <tr>
-                <th v-for="tableHeaderItem, tableHeaderIndex in tableHeaders" :key="tableHeaderIndex" class="text-left">
-                    {{ tableHeaderItem }}
+                <th v-for="headerItem, headerIndex in headerItems" :key="headerIndex">
+                    {{ headerItem }}
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>asd</td>
-                <td>asd</td>
-                <td>asd</td>
+            <tr v-for="tableItem in props.items">
+                <td v-for="item in Object.values(tableItem)">{{ item }}</td>
             </tr>
         </tbody>
     </v-table>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-
 const props = defineProps(['items'])
-
-const tableHeaders = computed(() => {
-    const singleRow = props.items[0]
-    return Object.keys(singleRow)
-})
+const headersList = props.items[0]
+const headerItems = Object.keys(headersList)
 </script>
